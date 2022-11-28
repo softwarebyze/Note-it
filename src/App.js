@@ -10,10 +10,16 @@ function App() {
 
   const addNote = (text) => {
     const date = new Date();
+    const options = {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric"
+    };
     const newNote = {
       id: nanoid(),
       text: text,
-      date: date.toLocaleString(),
+      date: date.toLocaleString("en-US", options)
     };
     const newNotes = [newNote, ...notes];
     setNotes(newNotes);
