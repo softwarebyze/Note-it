@@ -25,6 +25,7 @@ export default function NewNoteForm({ handleAddNote }) {
         value={noteText}
         onChange={handleChange}
         style={{ height: "150px" }}
+        autoFocus
       />
       <Button type="submit" className="my-2">
         Add
