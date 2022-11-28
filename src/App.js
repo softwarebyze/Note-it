@@ -25,14 +25,22 @@ function App() {
     setNotes(newNotes);
   };
 
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+  };
+
   return (
     <>
-      <NewNoteForm
-        setNotes={setNotes}
-        handleAddNote={addNote}
-        className="NewNoteForm mx-auto"
-      />
-      <NotesGrid notes={notes} />
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand>
+            Note it
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+      <NewNoteForm addNote={addNote} className="NewNoteForm mx-auto" />
+      <NotesGrid deleteNote={deleteNote} notes={notes} />
     </>
   );
 }
