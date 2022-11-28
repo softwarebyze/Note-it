@@ -11,8 +11,8 @@ function App() {
   const addNote = (text) => {
     const date = new Date();
     const options = {
-      month: "short",
-      day: "numeric",
+      // month: "short",
+      // day: "numeric",
       hour: "numeric",
       minute: "numeric"
     };
