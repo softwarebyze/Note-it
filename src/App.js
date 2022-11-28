@@ -4,6 +4,7 @@ import "./App.css";
 import NewNoteForm from "./components/NewNoteForm";
 import NotesGrid from "./components/NotesGrid";
 import { nanoid } from "nanoid";
+import { Container, Navbar } from "react-bootstrap";
 
 function App() {
   const [notes, setNotes] = useState([]);
