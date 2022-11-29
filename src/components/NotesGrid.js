@@ -9,7 +9,7 @@ export default function NotesGrid({ notes, deleteNote }) {
       <Row>
         {notes.map((note) => (
           <Col lg="auto" md="auto" sm="auto" xl="auto" xs="auto" xxl="auto">
-            <Note deleteNote={deleteNote} id={note.id} text={note.text} date={note.date} />
+            <Note deleteNote={deleteNote} id={note.id} title={note.title} text={note.text} date={note.date} />
           </Col>
         ))}
       </Row>

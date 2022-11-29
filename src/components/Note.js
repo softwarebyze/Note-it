@@ -3,11 +3,12 @@ import { Button, Card } from "react-bootstrap";
 import { FaSkullCrossbones } from "react-icons/fa";
 import DeleteNoteModal from "./DeleteModal";
 
-export default function Note({ text, id, date, deleteNote }) {
+export default function Note({ text, id, date, title, deleteNote }) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   return (
     <Card key={id}>
       <Card.Body>
+        <Card.Title className="me-5">{title}</Card.Title>
         <Card.Text className="me-5">{text}</Card.Text>
       </Card.Body>
       <Button

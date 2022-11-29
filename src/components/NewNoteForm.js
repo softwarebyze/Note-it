@@ -4,29 +4,43 @@ import { useState } from "react";
 
 export default function NewNoteForm({ addNote }) {
   const [noteText, setNoteText] = useState("");
+  const [noteTitle, setNoteTitle] = useState("");
 
-  const handleChange = (e) => {
+  const handleNoteTextChange = (e) => {
     setNoteText(e.target.value);
+  };
+
+  const handleNoteTitleChange = (e) => {
+    setNoteTitle(e.target.value);
   };
 
   const handleAddClick = (e) => {
     e.preventDefault();
     if (noteText.trim().length > 0) {
-      addNote(noteText);
+      addNote(noteText, noteTitle);
       setNoteText("");
+      setNoteTitle("");
     }
   };
 
   return (
     <Form
       onSubmit={handleAddClick}
-      className="NewNoteForm p-3 m-3 w-75 mx-auto border"
+      className="NewNoteForm p-3 m-3 w-50 mx-auto border"
     >
       <Form.Control
+        type="text"
+        placeholder="Title"
+        className="my-2"
+        value={noteTitle}
+        onChange={handleNoteTitleChange}
+      />
+      <Form.Control
+        className="my-2"
         as="textarea"
         placeholder="Your note..."
         value={noteText}
-        onChange={handleChange}
+        onChange={handleNoteTextChange}
         style={{ height: "150px" }}
         autoFocus
       />

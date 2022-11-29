@@ -9,18 +9,19 @@ import { Container, Navbar } from "react-bootstrap";
 function App() {
   const [notes, setNotes] = useState([]);
 
-  const addNote = (text) => {
+  const addNote = (text, title) => {
     const date = new Date();
     const options = {
       // month: "short",
       // day: "numeric",
       hour: "numeric",
-      minute: "numeric"
+      minute: "numeric",
     };
     const newNote = {
       id: nanoid(),
       text: text,
-      date: date.toLocaleString("en-US", options)
+      title: title,
+      date: date.toLocaleString("en-US", options),
     };
     const newNotes = [newNote, ...notes];
     setNotes(newNotes);
@@ -35,12 +36,10 @@ function App() {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand>
-            Note it
-          </Navbar.Brand>
+          <Navbar.Brand>Note it</Navbar.Brand>
         </Container>
       </Navbar>
-      <NewNoteForm addNote={addNote} className="NewNoteForm mx-auto" />
+      <NewNoteForm addNote={addNote} className="mx-auto" />
       <NotesGrid deleteNote={deleteNote} notes={notes} />
     </>
   );
