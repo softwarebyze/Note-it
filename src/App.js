@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" className="gradient">
         <Container>
           <Navbar.Brand>Note it</Navbar.Brand>
         </Container>

@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+
+.gradient {
+  background-image: linear-gradient(
+    90deg,
+    hsl(55deg 100% 20%) 0%,
+    hsl(55deg 100% 23%) 16%,
+    hsl(55deg 100% 25%) 26%,
+    hsl(55deg 99% 28%) 35%,
+    hsl(55deg 99% 31%) 43%,
+    hsl(55deg 99% 34%) 51%,
+    hsl(55deg 98% 37%) 59%,
+    hsl(55deg 98% 40%) 68%,
+    hsl(55deg 98% 43%) 78%,
+    hsl(55deg 97% 47%) 100%
+  );
+}
