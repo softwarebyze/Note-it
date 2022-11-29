@@ -9,7 +9,7 @@ export default function Note({ text, id, date, title, deleteNote }) {
     <Card>
       <Card.Body>
         <Card.Title className="me-5">{title}</Card.Title>
-        <Card.Text className="me-5">{text}</Card.Text>
+        <Card.Text>{text}</Card.Text>
       </Card.Body>
       <Button
         onClick={() => setShowDeleteModal(true)}
