@@ -6,7 +6,7 @@ import Note from "./Note";
 export default function NotesGrid({ notes, deleteNote }) {
   return (
     <Container>
-      <Row>
+      <Row className="g-4">
         {notes.map((note) => (
           <Col key={note.id} lg="auto" md="auto" sm="auto" xl="auto" xs="auto" xxl="auto">
             <Note deleteNote={deleteNote} id={note.id} title={note.title} text={note.text} date={note.date} />
