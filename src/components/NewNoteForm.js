@@ -44,9 +44,11 @@ export default function NewNoteForm({ addNote }) {
         style={{ height: "150px" }}
         autoFocus
       />
-      <Button type="submit" className="my-2">
-        Add
-      </Button>
+      <div className="d-grid">
+        <Button variant="primary" type="submit" className="my-2">
+          Add
+        </Button>
+      </div>
     </Form>
   );
 }
