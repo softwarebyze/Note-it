@@ -5,9 +5,11 @@ import { useState } from "react";
 export default function NewNoteForm({ addNote }) {
   const [noteText, setNoteText] = useState("");
   const [noteTitle, setNoteTitle] = useState("");
+  const [textAreaHeight, setTextAreaHeight] = useState();
 
   const handleNoteTextChange = (e) => {
     setNoteText(e.target.value);
+    setTextAreaHeight(e.target.scrollHeight);
   };
 
   const handleNoteTitleChange = (e) => {
@@ -41,7 +43,11 @@ export default function NewNoteForm({ addNote }) {
         placeholder="Your note..."
         value={noteText}
         onChange={handleNoteTextChange}
-        style={{ height: "150px" }}
+        style={{
+          resize: "none",
+          overflow: "hidden",
+          height: `${textAreaHeight}px`,
+        }}
         autoFocus
       />
       <div className="d-grid">
