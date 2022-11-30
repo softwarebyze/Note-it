@@ -52,8 +52,12 @@ export default function NewNoteForm({ currentNote, addNote }) {
         autoFocus
       />
       <div className="d-grid">
-        <Button variant="primary" type="submit" className="my-2">
-          Add
+        <Button
+          variant={currentNote.id === null ? "primary" : "secondary"}
+          type="submit"
+          className="my-2"
+        >
+          {currentNote.id === null ? "Add" : "Save"}
         </Button>
       </div>
     </Form>
