@@ -13,6 +13,8 @@ function App() {
     id: null,
     text: "",
     title: "",
+    date: null,
+    updatedDate: null,
   });
 
   const addNote = (text, title) => {
@@ -28,6 +30,7 @@ function App() {
       text: text,
       title: title,
       date: date.toLocaleString("en-US", options),
+      updatedDate: null,
     };
     const newNotes = [newNote, ...notes];
     setNotes(newNotes);
@@ -42,7 +45,17 @@ function App() {
     setNotes(
       notes.map((note) => {
         if (note.id === id) {
-          return { ...note, text: text, title: title };
+          return {
+            ...note,
+            text: text,
+            title: title,
+            updatedDate: new Date().toLocaleString("en-US", {
+              // month: "short",
+              // day: "numeric",
+              hour: "numeric",
+              minute: "numeric",
+            }),
+          };
         } else {
           return note;
         }

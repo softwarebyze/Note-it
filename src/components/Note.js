@@ -9,7 +9,7 @@ export default function Note({
   setCurrentNote,
   setShowEditNoteModal,
 }) {
-  const { text, id, date, title } = note;
+  const { text, id, date, title, updatedDate } = note;
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const handleNoteClick = () => {
@@ -22,6 +22,8 @@ export default function Note({
       id: null,
       text: "",
       title: "",
+      date: null,
+      updatedDate: null
     });
   }
 
@@ -44,7 +46,7 @@ export default function Note({
         showDeleteModal={showDeleteModal}
         setShowDeleteModal={setShowDeleteModal}
       />
-      <Card.Footer className="text-muted">{date}</Card.Footer>
+      <Card.Footer className="text-muted">Created: {date} {updatedDate !== null ? `Updated: ${updatedDate}` : ""}</Card.Footer>
     </Card>
   );
 }
