@@ -8,6 +8,11 @@ import { Container, Navbar } from "react-bootstrap";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [currentNote, setCurrentNote] = useState({
+    id: null,
+    text: "",
+    title: "",
+  });
 
   const addNote = (text, title) => {
     const date = new Date();

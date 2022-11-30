@@ -2,9 +2,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
-export default function NewNoteForm({ addNote }) {
-  const [noteText, setNoteText] = useState("");
-  const [noteTitle, setNoteTitle] = useState("");
+export default function NewNoteForm({ currentNote, addNote }) {
+  const [noteText, setNoteText] = useState(currentNote.text);
+  const [noteTitle, setNoteTitle] = useState(currentNote.title);
   // const [textAreaHeight, setTextAreaHeight] = useState();
 
   const handleNoteTextChange = (e) => {

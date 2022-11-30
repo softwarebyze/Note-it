@@ -1,8 +1,8 @@
 import Modal from "react-bootstrap/Modal";
 
 export default function EditNoteModal({
-  title,
-  text,
+  currentNote,
+  addNote,
   showEditNoteModal,
   setShowEditNoteModal,
 }) {
