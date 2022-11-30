@@ -27,7 +27,8 @@ export default function Note({ text, id, date, title, deleteNote }) {
         setShowDeleteModal={setShowDeleteModal}
       />
       <EditNoteModal
-        noteId={id}
+        title={title}
+        text={text}
         showEditNoteModal={showEditNoteModal}
         setShowEditNoteModal={setShowEditNoteModal}
       />
