@@ -15,7 +15,7 @@ export default function DeleteNoteModal({
 
   return (
     <>
-      <Modal
+      <Modal size="sm"
         show={showDeleteModal}
         onHide={handleClose}
         centered
