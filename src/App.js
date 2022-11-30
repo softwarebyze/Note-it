@@ -5,6 +5,7 @@ import NewNoteForm from "./components/NewNoteForm";
 import NotesGrid from "./components/NotesGrid";
 import { nanoid } from "nanoid";
 import { Container, Navbar } from "react-bootstrap";
+import DeleteNoteModal from "./components/DeleteNoteModal";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -44,8 +45,19 @@ function App() {
           <Navbar.Brand>Note it</Navbar.Brand>
         </Container>
       </Navbar>
-      <NewNoteForm addNote={addNote} className="mx-auto" />
-      <NotesGrid deleteNote={deleteNote} notes={notes} />
+      <NewNoteForm
+        currentNote={currentNote}
+        addNote={addNote}
+        className="mx-auto"
+      />
+      <NotesGrid
+        currentNote={currentNote}
+        setCurrentNote={setCurrentNote}
+        addNote={addNote}
+        deleteNote={deleteNote}
+        notes={notes}
+      />
+      <DeleteNoteModal />
     </>
   );
 }

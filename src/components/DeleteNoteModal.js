@@ -7,7 +7,7 @@ export default function DeleteNoteModal({
   setShowDeleteModal,
   deleteNote
 }) {
-  const handleClose = () => setShowDeleteModal(false);
+  const handleClose = () => {setShowDeleteModal(false)};
   const handleDeleteNote = () => {
     deleteNote(noteId)
     handleClose();
