@@ -38,6 +38,18 @@ function App() {
     setNotes(newNotes);
   };
 
+  const editNote = (id, text, title) => {
+    setNotes(
+      notes.map((note) => {
+        if (note.id === id) {
+          return { ...note, text: text, title: title };
+        } else {
+          return note;
+        }
+      })
+    );
+  };
+
   return (
     <>
       <Navbar bg="dark" variant="dark" className="gradient">
@@ -55,6 +67,7 @@ function App() {
         setCurrentNote={setCurrentNote}
         addNote={addNote}
         deleteNote={deleteNote}
+        editNote={editNote}
         notes={notes}
       />
       <DeleteNoteModal />

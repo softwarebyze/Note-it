@@ -2,7 +2,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
-export default function NewNoteForm({ currentNote, addNote }) {
+export default function NoteForm({ currentNote, addNote, editNote, handleClose }) {
   const [noteText, setNoteText] = useState(currentNote.text);
   const [noteTitle, setNoteTitle] = useState(currentNote.title);
   // const [textAreaHeight, setTextAreaHeight] = useState();
@@ -25,10 +25,17 @@ export default function NewNoteForm({ currentNote, addNote }) {
     }
   };
 
+  const handleSaveClick = (e) => {
+    e.preventDefault();
+    console.log('saved (not actually)')
+    handleClose()
+    editNote(currentNote.id, noteText, noteTitle)
+  }
+
   return (
     <Form
-      onSubmit={handleAddClick}
-      className="NewNoteForm p-3 m-3 w-50 mx-auto border"
+      onSubmit={currentNote.id === null ? handleAddClick : handleSaveClick}
+      className="p-3 m-3 w-50 mx-auto border"
     >
       <Form.Control
         type="text"

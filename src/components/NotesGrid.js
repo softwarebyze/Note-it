@@ -9,6 +9,7 @@ export default function NotesGrid({
   notes,
   currentNote,
   addNote,
+  editNote,
   setCurrentNote,
   deleteNote,
 }) {
@@ -33,6 +34,7 @@ export default function NotesGrid({
       </Container>
       <EditNoteModal
         addNote={addNote}
+        editNote={editNote}
         setCurrentNote={setCurrentNote}
         currentNote={currentNote}
         setShowEditNoteModal={setShowEditNoteModal}

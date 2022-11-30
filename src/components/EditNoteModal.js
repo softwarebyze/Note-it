@@ -5,6 +5,7 @@ export default function EditNoteModal({
   currentNote,
   setCurrentNote,
   addNote,
+  editNote,
   showEditNoteModal,
   setShowEditNoteModal,
 }) {
@@ -20,7 +21,7 @@ export default function EditNoteModal({
   return (
     <>
       <Modal size="sm" show={showEditNoteModal} onHide={handleClose} centered>
-        <NoteForm currentNote={currentNote} addNote={addNote} />
+        <NoteForm currentNote={currentNote} handleClose={handleClose} addNote={addNote} editNote={editNote}/>
       </Modal>
     </>
   );
