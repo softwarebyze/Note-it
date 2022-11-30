@@ -18,8 +18,8 @@ export default function NotesGrid({
       <Container>
         <Row className="g-4">
           {notes.map((note) => (
-            // <Col key={note.id} lg="auto" md="auto" sm="auto" xl="auto" xs="auto" xxl="auto">
-            <Col key={note.id}>
+            <Col key={note.id} lg="auto" md="auto" sm="auto" xl="auto" xs="auto" xxl="auto">
+            {/* <Col key={note.id}> */}
               {/* <Note deleteNote={deleteNote} setCurrentNote={setCurrentNote} id={note.id} title={note.title} text={note.text} date={note.date} /> */}
               <Note
                 deleteNote={deleteNote}
@@ -33,6 +33,7 @@ export default function NotesGrid({
       </Container>
       <EditNoteModal
         addNote={addNote}
+        setCurrentNote={setCurrentNote}
         currentNote={currentNote}
         setShowEditNoteModal={setShowEditNoteModal}
         showEditNoteModal={showEditNoteModal}
