@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import "./App.css";
-import NewNoteForm from "./components/NewNoteForm";
+import NoteForm from "./components/NoteForm";
 import NotesGrid from "./components/NotesGrid";
 import { nanoid } from "nanoid";
 import { Container, Navbar } from "react-bootstrap";
@@ -45,7 +45,7 @@ function App() {
           <Navbar.Brand>Note it</Navbar.Brand>
         </Container>
       </Navbar>
-      <NewNoteForm
+      <NoteForm
         currentNote={currentNote}
         addNote={addNote}
         className="mx-auto"

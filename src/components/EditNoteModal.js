@@ -1,5 +1,5 @@
 import Modal from "react-bootstrap/Modal";
-import NewNoteForm from "./NewNoteForm";
+import NoteForm from "./NoteForm";
 
 export default function EditNoteModal({
   currentNote,
@@ -12,7 +12,7 @@ export default function EditNoteModal({
   return (
     <>
       <Modal size="sm" show={showEditNoteModal} onHide={handleClose} centered>
-          <NewNoteForm currentNote={currentNote} addNote={addNote}/>
+        <NoteForm currentNote={currentNote} addNote={addNote} />
       </Modal>
     </>
   );
