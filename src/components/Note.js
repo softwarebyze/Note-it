@@ -8,7 +8,7 @@ export default function Note({ text, id, date, title, deleteNote }) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditNoteModal, setShowEditNoteModal] = useState(false);
   return (
-    <Card>
+    <Card className="Note" border="warning">
       <Card.Body role="button" onClick={() => setShowEditNoteModal(true)}>
         <Card.Title className="me-5">{title}</Card.Title>
         <Card.Text>{text}</Card.Text>

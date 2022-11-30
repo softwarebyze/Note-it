@@ -17,3 +17,7 @@
     hsl(55deg 97% 47%) 100%
   );
 }
+
+.Note {
+  white-space: pre-wrap;
+}
