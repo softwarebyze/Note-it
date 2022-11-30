@@ -2,14 +2,24 @@ import { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { FaSkullCrossbones } from "react-icons/fa";
 import DeleteNoteModal from "./DeleteNoteModal";
-import EditNoteModal from "./EditNoteModal";
 
-export default function Note({ text, id, date, title, deleteNote }) {
+export default function Note({
+  note,
+  deleteNote,
+  setCurrentNote,
+  setShowEditNoteModal,
+}) {
+  const { text, id, date, title } = note;
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [showEditNoteModal, setShowEditNoteModal] = useState(false);
+
+  const handleNoteClick = () => {
+    setCurrentNote(note);
+    setShowEditNoteModal(true);
+  };
+
   return (
     <Card className="Note" border="warning">
-      <Card.Body role="button" onClick={() => setShowEditNoteModal(true)}>
+      <Card.Body role="button" onClick={handleNoteClick}>
         <Card.Title className="me-5">{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
       </Card.Body>
@@ -25,12 +35,6 @@ export default function Note({ text, id, date, title, deleteNote }) {
         noteId={id}
         showDeleteModal={showDeleteModal}
         setShowDeleteModal={setShowDeleteModal}
-      />
-      <EditNoteModal
-        title={title}
-        text={text}
-        showEditNoteModal={showEditNoteModal}
-        setShowEditNoteModal={setShowEditNoteModal}
       />
       <Card.Footer className="text-muted">{date}</Card.Footer>
     </Card>

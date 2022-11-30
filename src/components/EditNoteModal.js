@@ -12,9 +12,6 @@ export default function EditNoteModal({
   return (
     <>
       <Modal size="sm" show={showEditNoteModal} onHide={handleClose} centered>
-        {/* <Modal.Body>
-          <Modal.Title>{title}</Modal.Title>
-          {text}</Modal.Body> */}
           <NewNoteForm currentNote={currentNote} addNote={addNote}/>
       </Modal>
     </>
