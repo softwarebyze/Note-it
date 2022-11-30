@@ -3,11 +3,19 @@ import NoteForm from "./NoteForm";
 
 export default function EditNoteModal({
   currentNote,
+  setCurrentNote,
   addNote,
   showEditNoteModal,
   setShowEditNoteModal,
 }) {
-  const handleClose = () => setShowEditNoteModal(false);
+  const handleClose = () => {
+    setShowEditNoteModal(false);
+    setCurrentNote({
+      id: null,
+      text: "",
+      title: "",
+    })
+  };
 
   return (
     <>
