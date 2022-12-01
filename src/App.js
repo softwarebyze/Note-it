@@ -63,19 +63,22 @@ function App() {
     );
   };
 
-  const handleRandomNotesClick = () => {
-    console.log('rand')
-    const randText = "txt"
-    const randTitle = "txtkTitl"
-    addNote(randText, randTitle)
-  }
+  const handleRandomNotesClick = async () => {
+    const res = await fetch("https://api.quotable.io/random");
+    const data = await res.json();
+    const randText = data.content;
+    const randTitle = data.author;
+    addNote(randText, randTitle);
+  };
 
   return (
     <>
       <Navbar bg="dark" variant="dark" className="gradient">
         <Container>
           <Navbar.Brand>Note it</Navbar.Brand>
-          <Button onClick={handleRandomNotesClick}>Random</Button>
+          <Button variant="secondary" onClick={handleRandomNotesClick}>
+            Add Random Note
+          </Button>
         </Container>
       </Navbar>
       <Container className="w-50">
