@@ -4,7 +4,7 @@ import "./App.css";
 import NoteForm from "./components/NoteForm";
 import NotesGrid from "./components/NotesGrid";
 import { nanoid } from "nanoid";
-import { Container, Navbar } from "react-bootstrap";
+import { Button, Container, Navbar } from "react-bootstrap";
 import DeleteNoteModal from "./components/DeleteNoteModal";
 
 function App() {
@@ -63,11 +63,19 @@ function App() {
     );
   };
 
+  const handleRandomNotesClick = () => {
+    console.log('rand')
+    const randText = "txt"
+    const randTitle = "txtkTitl"
+    addNote(randText, randTitle)
+  }
+
   return (
     <>
       <Navbar bg="dark" variant="dark" className="gradient">
         <Container>
           <Navbar.Brand>Note it</Navbar.Brand>
+          <Button onClick={handleRandomNotesClick}>Random</Button>
         </Container>
       </Navbar>
       <Container className="w-50">

@@ -17,19 +17,9 @@ export default function Note({
     setShowEditNoteModal(true);
   };
 
-  const handleNoteClose = () => {
-    setCurrentNote({
-      id: null,
-      text: "",
-      title: "",
-      date: null,
-      updatedDate: null
-    });
-  }
-
   return (
     <Card className="Note" border="warning">
-      <Card.Body role="button" onClick={handleNoteClick} onHide={handleNoteClose}>
+      <Card.Body role="button" onClick={handleNoteClick}>
         <Card.Title className="me-5">{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
       </Card.Body>
