@@ -70,11 +70,13 @@ function App() {
           <Navbar.Brand>Note it</Navbar.Brand>
         </Container>
       </Navbar>
-      <NoteForm
-        currentNote={currentNote}
-        addNote={addNote}
-        className="mx-auto"
-      />
+      <Container className="w-50">
+        <NoteForm
+          currentNote={currentNote}
+          addNote={addNote}
+          className="mx-auto"
+        />
+      </Container>
       <NotesGrid
         currentNote={currentNote}
         setCurrentNote={setCurrentNote}

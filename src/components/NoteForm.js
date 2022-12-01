@@ -41,7 +41,7 @@ export default function NoteForm({
   return (
     <Form
       onSubmit={currentNote.id === null ? handleAddClick : handleSaveClick}
-      className="p-3 m-3 w-50 mx-auto border"
+      className="p-3 m-3 mx-auto border"
     >
       <Form.Control
         type="text"
