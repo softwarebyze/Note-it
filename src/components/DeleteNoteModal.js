@@ -3,15 +3,20 @@ import Modal from "react-bootstrap/Modal";
 
 export default function DeleteNoteModal({
   currentNote,
+  setCurrentNote,
   showDeleteNoteModal,
   setShowDeleteNoteModal,
   deleteNote,
 }) {
   const handleClose = () => {
     setShowDeleteNoteModal(false);
+    setCurrentNote({
+      id: null,
+      text: "",
+      title: "",
+    })
   };
   const handleDeleteNote = () => {
-    console.log(currentNote);
     deleteNote(currentNote.id);
     handleClose();
   };

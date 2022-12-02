@@ -43,6 +43,7 @@ export default function NotesGrid({
         showDeleteNoteModal={showDeleteNoteModal}
         setShowDeleteNoteModal={setShowDeleteNoteModal}
         deleteNote={deleteNote}
+        setCurrentNote={setCurrentNote}
         currentNote={currentNote}
       />
     </>
