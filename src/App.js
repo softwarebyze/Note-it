@@ -20,8 +20,8 @@ function App() {
   const addNote = (text, title) => {
     const date = new Date();
     const options = {
-      // month: "short",
-      // day: "numeric",
+      month: "short",
+      day: "numeric",
       hour: "numeric",
       minute: "numeric",
     };
@@ -50,8 +50,8 @@ function App() {
             text: text,
             title: title,
             updatedDate: new Date().toLocaleString("en-US", {
-              // month: "short",
-              // day: "numeric",
+              month: "short",
+              day: "numeric",
               hour: "numeric",
               minute: "numeric",
             }),
