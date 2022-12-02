@@ -63,7 +63,13 @@ function App() {
     );
   };
 
-  const handleRandomNotesClick = async () => {
+  const getRandomFact = async () => {
+    const res = await fetch(`https://uselessfacts.jsph.pl/random.json?language=en`)
+    const data = await res.json();
+    return {randText:data.text, randTitle:""}
+  }
+
+  const getRandomQuote = async () => {
     const res = await fetch("https://api.quotable.io/random");
     const data = await res.json();
     const randText = data.content;
