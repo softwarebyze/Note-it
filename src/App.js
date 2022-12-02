@@ -74,6 +74,12 @@ function App() {
     const data = await res.json();
     const randText = data.content;
     const randTitle = data.author;
+    return {randText,randTitle}
+  }
+
+  const handleRandomNotesClick = async () => {
+    const randomNoteGenerators = [getRandomFact, getRandomQuote]
+    const {randText, randTitle} = await randomNoteGenerators[Math.floor(Math.random() * 2)]()
     addNote(randText, randTitle);
   };
 
