@@ -5,7 +5,6 @@ import NoteForm from "./components/NoteForm";
 import NotesGrid from "./components/NotesGrid";
 import { nanoid } from "nanoid";
 import { Button, Container, Navbar } from "react-bootstrap";
-import DeleteNoteModal from "./components/DeleteNoteModal";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -86,6 +85,7 @@ function App() {
   return (
     <>
       <Navbar bg="dark" variant="dark" className="gradient">
+        {/* <Navbar fixed="top" bg="dark" variant="dark" className="gradient"> */}
         <Container>
           <Navbar.Brand>Note it</Navbar.Brand>
           <Button variant="secondary" onClick={handleRandomNotesClick}>
@@ -108,7 +108,6 @@ function App() {
         editNote={editNote}
         notes={notes}
       />
-      <DeleteNoteModal />
     </>
   );
 }
