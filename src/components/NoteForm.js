@@ -67,7 +67,7 @@ export default function NoteForm({
       />
       <div className="d-grid">
         <Button
-          variant={currentNote.id === null ? "primary" : "secondary"}
+          variant={currentNote.id === null ? "primary" : "dark"}
           type="submit"
           className="my-2"
         >
