@@ -63,7 +63,6 @@ export default function NoteForm({
           // overflow: "hidden",
           // height: `${textAreaHeight}px`,
         }}
-        autoFocus
       />
       <div className="d-grid">
         <Button
