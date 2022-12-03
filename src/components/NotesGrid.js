@@ -19,8 +19,8 @@ export default function NotesGrid({
   const [parent] = useAutoAnimate();
   return (
     <>
-      <Container>
-        <Row ref={parent} className="g-4 mb-5" xs={1} md={2} lg={3} xl={4}>
+      <Container className=" mb-5">
+        <Row ref={parent} className="g-4" xs={1} md={2} lg={3} xl={4}>
           {notes.map((note) => (
             <Col key={note.id}>
               <Note
