@@ -63,22 +63,26 @@ function App() {
   };
 
   const getRandomFact = async () => {
-    const res = await fetch(`https://uselessfacts.jsph.pl/random.json?language=en`)
+    const res = await fetch(
+      `https://uselessfacts.jsph.pl/random.json?language=en`
+    );
     const data = await res.json();
-    return {randText:data.text, randTitle:""}
-  }
+    return { randText: data.text, randTitle: "" };
+  };
 
   const getRandomQuote = async () => {
     const res = await fetch("https://api.quotable.io/random");
     const data = await res.json();
     const randText = data.content;
     const randTitle = data.author;
-    return {randText,randTitle}
-  }
+    return { randText, randTitle };
+  };
 
   const handleRandomNotesClick = async () => {
-    const randomNoteGenerators = [getRandomFact, getRandomQuote]
-    const {randText, randTitle} = await randomNoteGenerators[Math.floor(Math.random() * 2)]()
+    const randomNoteGenerators = [getRandomFact, getRandomQuote];
+    const { randText, randTitle } = await randomNoteGenerators[
+      Math.floor(Math.random() * 2)
+    ]();
     addNote(randText, randTitle);
   };
 
@@ -88,12 +92,12 @@ function App() {
         {/* <Navbar fixed="top" bg="dark" variant="dark" className="gradient"> */}
         <Container>
           <Navbar.Brand>Note it</Navbar.Brand>
-          <Button variant="secondary" onClick={handleRandomNotesClick}>
+          <Button variant="dark" onClick={handleRandomNotesClick}>
             Add Random Note
           </Button>
         </Container>
       </Navbar>
-      <Container className="w-50">
+      <Container>
         <NoteForm
           currentNote={currentNote}
           addNote={addNote}
