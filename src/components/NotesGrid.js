@@ -5,8 +5,7 @@ import Note from "./Note";
 import EditNoteModal from "./EditNoteModal";
 import { useState } from "react";
 import DeleteNoteModal from "./DeleteNoteModal";
-import { useAutoAnimate } from '@formkit/auto-animate/react'
-
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export default function NotesGrid({
   notes,
@@ -17,7 +16,7 @@ export default function NotesGrid({
 }) {
   const [showEditNoteModal, setShowEditNoteModal] = useState(false);
   const [showDeleteNoteModal, setShowDeleteNoteModal] = useState(false);
-  const [parent] = useAutoAnimate()
+  const [parent] = useAutoAnimate();
   return (
     <>
       <Container>
