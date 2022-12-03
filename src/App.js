@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import NoteForm from "./components/NoteForm";
 import NotesGrid from "./components/NotesGrid";
@@ -7,7 +7,9 @@ import { nanoid } from "nanoid";
 import { Button, Container, Navbar } from "react-bootstrap";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  let data = JSON.parse(localStorage.getItem("notes"));
+  if (data === null) data = [];
+  const [notes, setNotes] = useState(data);
   const [currentNote, setCurrentNote] = useState({
     id: null,
     text: "",
@@ -15,6 +17,8 @@ function App() {
     date: null,
     updatedDate: null,
   });
+
+  useEffect(() => localStorage.setItem("notes", JSON.stringify(notes)));
 
   const addNote = (text, title) => {
     const date = new Date();
