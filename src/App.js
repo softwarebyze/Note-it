@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
+import { Button, Container, Navbar } from "react-bootstrap";
 import "./App.css";
 import NoteForm from "./components/NoteForm";
 import NotesGrid from "./components/NotesGrid";
-import { nanoid } from "nanoid";
-import { Button, Container, Navbar } from "react-bootstrap";
 
 function App() {
   let data = JSON.parse(localStorage.getItem("notes"));
