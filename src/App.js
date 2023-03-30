@@ -6,16 +6,17 @@ import "./App.css";
 import NoteForm from "./components/NoteForm";
 import NotesGrid from "./components/NotesGrid";
 
-function App() {
+export default function App() {
   let data = JSON.parse(localStorage.getItem("notes")) ?? [];
   const [notes, setNotes] = useState(data);
-  const [currentNote, setCurrentNote] = useState({
+  const defaultNote = {
     id: null,
     text: "",
     title: "",
     date: null,
     updatedDate: null,
-  });
+  };
+  const [currentNote, setCurrentNote] = useState(defaultNote);
 
   useEffect(() => localStorage.setItem("notes", JSON.stringify(notes)));
 
@@ -90,9 +91,8 @@ function App() {
   };
 
   return (
-    <>
-      <Navbar bg="dark" variant="dark" className="gradient">
-        {/* <Navbar fixed="top" bg="dark" variant="dark" className="gradient"> */}
+    <Container className="mt-5 mx-auto">
+      <Navbar fixed="top" bg="dark" variant="dark" className="gradient">
         <Container>
           <Navbar.Brand>Note it</Navbar.Brand>
           <Button variant="dark" onClick={handleRandomNotesClick}>
@@ -100,13 +100,7 @@ function App() {
           </Button>
         </Container>
       </Navbar>
-      <Container>
-        <NoteForm
-          currentNote={currentNote}
-          addNote={addNote}
-          className="mx-auto"
-        />
-      </Container>
+      <NoteForm currentNote={currentNote} addNote={addNote} />
       <NotesGrid
         currentNote={currentNote}
         setCurrentNote={setCurrentNote}
@@ -115,8 +109,6 @@ function App() {
         editNote={editNote}
         notes={notes}
       />
-    </>
+    </Container>
   );
 }
-
-export default App;
