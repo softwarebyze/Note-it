@@ -7,8 +7,7 @@ import NoteForm from "./components/NoteForm";
 import NotesGrid from "./components/NotesGrid";
 
 function App() {
-  let data = JSON.parse(localStorage.getItem("notes"));
-  if (data === null) data = [];
+  let data = JSON.parse(localStorage.getItem("notes")) ?? [];
   const [notes, setNotes] = useState(data);
   const [currentNote, setCurrentNote] = useState({
     id: null,
